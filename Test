@@ -1,0 +1,52 @@
+import java.util.*;
+
+public class StringMethods
+{
+   public static void main (String[] args)
+   {
+      Scanner reader = new Scanner (System.in);
+      System.out.println("Input your string:");
+      String sentence = reader.nextLine();
+      System.out.println("The length is " + sentence.length());
+      int length = sentence.length();
+      if (sentence.length()<2)
+      {
+         System.out.println("The string is only one character so the first character is " + sentence.substring(0, 1));
+      }
+      else
+      {
+         System.out.println("The first two characters are " + sentence.substring(0, 2));
+      }
+      if (sentence.length()<2)
+      {
+         System.out.println("The string is only one character so the last character is " + sentence.substring(0, 1));
+      }
+      else
+      {
+         System.out.println("The last two characters are " + sentence.substring(length-2, length));
+      }
+      System.out.println("The string in all caps is " + sentence.toUpperCase());
+      int omita = sentence.indexOf('a');
+      if (omita>=0)
+      {
+         String sentence2 = sentence.substring(0, omita) + sentence.substring(omita + 1);
+         System.out.println("Removing the letter a: " + sentence2);
+      }
+      else
+      {
+         System.out.println("There is no 'a' to remove.");
+      }
+      System.out.println("Input another string:");
+      String sentencetwo = reader.nextLine();
+      int compare = sentence.compareTo(sentencetwo);
+      System.out.println("Comparing '" + sentence + "' to '" + sentencetwo + "': " + compare);
+      if (compare==0)
+      {
+         System.out.println("The two strings are equal");
+      }
+      else
+      {
+         System.out.println("The strings are not equal");
+      }
+   }
+} 
